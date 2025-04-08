@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Mensagens em Ordem</h1>
+    <p id="mensagem">Clique no botão para ver uma mensagem!</p>
+    <button onclick="mostrarMensagem()">Clique aqui</button>
+
+    <script>
+        const mensagens = ["Bom dia!", "Boa tarde!", "Boa noite!", "Olá!", "Como vai?"];
+        let indice = 0; // Variável para controlar a ordem das mensagens
+
+        function mostrarMensagem() {
+            document.getElementById("mensagem").textContent = mensagens[indice];
+            indice = (indice + 1) % mensagens.length; // Volta para o início quando chega ao fim
+        }
+    </script>
+</body>
+</html>
