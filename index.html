@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Imagens e Mensagens</title>
 </head>
 <body>
-    <h1>Mensagens em Ordem</h1>
-    <p id="mensagem">Clique no botão para ver uma mensagem!</p>
+    <h1>Imagens e Mensagens</h1>
+    <p id="mensagem">Clique no botão para ver uma mensagem e uma imagem!</p>
     <button onclick="mostrarMensagem()">Clique aqui</button>
-
+    <img id="imagem" src="">
     <script>
         const mensagens = ["Bom dia!", "Boa tarde!", "Boa noite!", "Olá!", "Como vai?"];
-        let indice = 0; // Variável para controlar a ordem das mensagens
+        const imagens = [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnvrJD42AAB1m7saq6ravg9lTDMNtAWsiKHA&s",
+            "https://www.citytour.ae/bigImage/020240507-1305079355838.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlRYwS5A0rCCfblZi-Tt2sj8U7LzDZ1u6x1g&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNu9uulWIgqP6ax8ikiM4eQUf2cNqGtOMkaQ&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYkA8GpfNae4V5KL6pkCRR8LnX_-g4NFa_WA&s"
+        ];
+        let indice = 0; 
 
         function mostrarMensagem() {
             document.getElementById("mensagem").textContent = mensagens[indice];
-            indice = (indice + 1) % mensagens.length; // Volta para o início quando chega ao fim
+            document.getElementById("imagem").src = imagens[indice];
+            indice = (indice + 1) % mensagens.length; // Volta ao início quando chega ao fim
         }
     </script>
 </body>
