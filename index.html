@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagens e Mensagens</title>
+    <title>msg</title>
 </head>
+<style>
+    img{
+        width: 300px;
+        height: 300px;
+    }
+</style>
 <body>
     <h1>Imagens e Mensagens</h1>
-    <p id="mensagem">Clique no botão para ver uma mensagem e uma imagem!</p>
+    <p id="mensagem"></p>
     <button onclick="mostrarMensagem()">Clique aqui</button>
-    <img id="imagem" src="">
+    <img id="imagem" src="" alt="Imagem">
     <script>
         const mensagens = ["Bom dia!", "Boa tarde!", "Boa noite!", "Olá!", "Como vai?"];
         const imagens = [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnvrJD42AAB1m7saq6ravg9lTDMNtAWsiKHA&s",
-            "https://www.citytour.ae/bigImage/020240507-1305079355838.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlRYwS5A0rCCfblZi-Tt2sj8U7LzDZ1u6x1g&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNu9uulWIgqP6ax8ikiM4eQUf2cNqGtOMkaQ&s",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYkA8GpfNae4V5KL6pkCRR8LnX_-g4NFa_WA&s"
+            "./img/paisagem1.jpeg",
+            "./img/paisagem2.jpg",
+            "./img/paisagem3.jpg",
+            "./img/paisagem4.jpg",
+            "./img/paisagem5.jpg"
         ];
         let indice = 0; 
 
         function mostrarMensagem() {
             document.getElementById("mensagem").textContent = mensagens[indice];
             document.getElementById("imagem").src = imagens[indice];
-            indice = (indice + 1) % mensagens.length; // Volta ao início quando chega ao fim
+            indice = (indice + 1) % mensagens.length; 
         }
     </script>
 </body>
